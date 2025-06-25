@@ -1,0 +1,7 @@
+<%= turbo_stream_from :tasks %>
+<%= render @tasks %>
+
+<%= turbo_frame_tag "new_task" do %>
+  <%= render "form", task: Task.new %>
+<% end %>
+

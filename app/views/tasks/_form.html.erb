@@ -1,0 +1,7 @@
+<%= form_with scope: :task, data: { turbo_frame: "_top" } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, required: true %>
+  <%= form.label :completed %>
+  <%= form.check_box :completed %>
+  <%= form.submit "Save" %>
+<% end %>

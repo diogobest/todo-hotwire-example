@@ -1,0 +1,11 @@
+<%= turbo_frame_tag dom_id(task) do %>
+  <div data-controller="tasks" data-tasks-id-value="<%= task.id %>" data-tasks-completed-value="<%= task.completed %>">
+    <input
+      type="checkbox"
+      <%= "checked" if task.completed %>
+      data-action="click->tasks#toggle"
+    />
+    <h3> <%= task.name %></h3>
+    <%= link_to 'Deletar', task_path(task.id), data: { turbo_method: :delete } %>
+</div>
+<% end %>
