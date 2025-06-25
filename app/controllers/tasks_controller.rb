@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(permitted_params)
+
     if @task.save
       respond_to do |format|
         format.turbo_stream
