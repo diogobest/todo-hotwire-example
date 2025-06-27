@@ -3,6 +3,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def new
+    @task = Task.new
+  end
+
   def create
     @task = Task.new(permitted_params)
     @task.save
@@ -11,12 +15,6 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-  end
-
-  def update
-    task = Task.find(permitted_params[:id].to_i)
-    task.update(permitted_params)
-    render task
   end
 
   def permitted_params
