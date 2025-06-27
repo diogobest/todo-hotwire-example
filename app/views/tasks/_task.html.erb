@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(task) do %>
-  <div data-controller="tasks" data-tasks-id-value="<%= task.id %>" data-tasks-completed-value="<%= task.completed %>">
+  <div data-controller="tasks" data-tasks-id-value="<%= task.id %>" data-tasks-completed-value="<%= task.completed %>" style="display: table; background-color: beige; border-style: solid; border-color: black;">
     <input
       type="checkbox"
       <%= "checked" if task.completed %>

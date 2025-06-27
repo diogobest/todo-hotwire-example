@@ -5,13 +5,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(permitted_params)
-
-    if @task.save
-      respond_to do |format|
-        format.turbo_stream
-        format.html { redirect_to tasks_path }
-      end
-    end
+    @task.save
   end
 
   def destroy
@@ -26,7 +20,6 @@ class TasksController < ApplicationController
   end
 
   def permitted_params
-    p params
     params.require(:task).permit(:id, :name, :completed)
   end
 end

@@ -5,8 +5,6 @@ export default class extends Controller {
   static values = { id: Number, completed: Boolean }
 
   toggle(event) {
-    console.warn("hmmm", this.idValue)
-    console.warn("hmmm2", this.completedValue)
     fetch(`/tasks/${this.idValue}`, {
       method: "PUT",
       headers: {
